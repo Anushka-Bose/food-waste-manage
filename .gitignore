@@ -1,0 +1,10 @@
+# Python / ML microservice
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+ml_ms/model*.pkl
+ml_ms/scaler*.pkl
+ml_ms/__pycache__/
+ml_ms/*.log
