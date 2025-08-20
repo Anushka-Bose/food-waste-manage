@@ -19,6 +19,7 @@ def train_model(preprocessed_path, model_save_path):
     # --- Features & target ---
     X = df.drop(columns=["food_waste_kg"])
     y = df["food_waste_kg"]
+    order=X.columns.tolist()
 
     # --- Train/Test split ---
     X_train, X_test, y_train, y_test = train_test_split(
@@ -67,15 +68,15 @@ def train_model(preprocessed_path, model_save_path):
     print(f"R^2 Score: {r2:.4f}")
 
     # --- Save model ---
-    joblib.dump(best_model, model_save_path)
+    joblib.dump({"model":best_model, "order": order}, model_save_path)
     print(f"Trained model saved to: {model_save_path}")
 
     return best_model
 
 
 if __name__ == "__main__":
-    preprocessed_path = r"C:\Users\ANUSHKA\OneDrive\문서\GitHub\food-waste-manage\data\processed\preprocessed_data.csv"
-    model_save_path = r"C:\Users\ANUSHKA\OneDrive\문서\GitHub\food-waste-manage\models\food_waste_model.pkl"
+    preprocessed_path = r"..\data\processed\preprocessed_data.csv"
+    model_save_path = r"..\models\food_waste_model.pkl"
 
     # Ensure models folder exists
     os.makedirs(os.path.dirname(model_save_path), exist_ok=True)

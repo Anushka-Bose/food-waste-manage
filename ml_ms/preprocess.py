@@ -82,6 +82,6 @@ def preprocess_data(raw_path, processed_path):
     return df
 
 if __name__ == "__main__":
-    raw_path = r"C:\Users\ANUSHKA\OneDrive\문서\GitHub\food-waste-manage\data\raw\train.csv"
-    processed_path = r"C:\Users\ANUSHKA\OneDrive\문서\GitHub\food-waste-manage\data\processed\preprocessed_data.csv"
+    raw_path = r"..\data\raw\train.csv"
+    processed_path = r"..\data\processed\preprocessed_data.csv"
     preprocess_data(raw_path, processed_path)
